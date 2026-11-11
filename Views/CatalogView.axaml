@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MusicSchool.Views.CatalogView">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Каталог образовательных программ" FontSize="24" FontWeight="Bold" Margin="0,0,0,16" />
+        
+        <ListBox x:Name="CoursesList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,5">
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel>
+                                <TextBlock Text="{Binding}" FontSize="16" FontWeight="Bold" />
+                            </StackPanel>
+                            <Button Grid.Column="1" Content="Оформить заявку" 
+                                    Click="OrderClick" 
+                                    Background="#70B2AF" Foreground="White" 
+                                    VerticalAlignment="Center" />
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

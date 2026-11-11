@@ -1,0 +1,35 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="MusicSchool.Views.OrdersView">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top" Spacing="10">
+            <TextBlock Text="Список заявок" FontSize="24" FontWeight="Bold" />
+            <Button Content="Обновить" Click="ReloadClick" Background="#70B2AF" Foreground="White" HorizontalAlignment="Left" />
+        </StackPanel>
+        
+        <ListBox x:Name="OrdersList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,5">
+                        <!-- Разделяем строку на две колонки: текст и кнопка -->
+                        <Grid ColumnDefinitions="*,Auto">
+                            
+                            <!-- Текст заявки -->
+                          <TextBlock Text="{Binding}" VerticalAlignment="Center" FontSize="16" />
+                            
+                            <!-- Кнопка удаления -->
+                            <Button Grid.Column="1" Content="Удалить" 
+                                    Background="#FF8080" Foreground="White" 
+                                    Click="DeleteOrderClick" 
+                                    CommandParameter="{Binding}" />
+                                    
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

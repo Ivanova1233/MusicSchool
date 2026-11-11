@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="MusicSchool.Views.TeacherGroupsView">
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top" Text="Мои учебные группы" FontSize="24" FontWeight="Bold" Margin="0,0,0,16" />
+        
+        <ListBox x:Name="GroupsList">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="Gray" BorderThickness="1" Padding="10" Margin="0,5">
+                        <StackPanel>
+                            <TextBlock Text="{Binding}" FontWeight="Bold" FontSize="16" />
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</UserControl>

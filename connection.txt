@@ -1,0 +1,2 @@
+﻿Server=(localdb)\MSSQLLocalDB;Database=music_school;
+Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;Connect Timeout=5
